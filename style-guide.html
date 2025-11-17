@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="nl">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Style Guide - Nadia ten Hove</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<style>
+			@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Space+Grotesk:wght@300..700&display=swap");
+
+			body {
+				font-family: "Inter", sans-serif;
+				background-color: #f5f5f5;
+			}
+
+			.font-serif-display {
+				font-family: "Playfair Display", serif;
+			}
+
+			.font-grotesk {
+				font-family: "Space Grotesk", sans-serif;
+			}
+
+			/* Color Palette */
+			.color-bordeaux {
+				background-color: #800020;
+			}
+			.color-silver {
+				background-color: #c0c0c0;
+			}
+			.color-black {
+				background-color: #000000;
+			}
+			.color-white {
+				background-color: #ffffff;
+			}
+			.color-cream {
+				background-color: #f5f0e8;
+			}
+
+			/* Typography Samples */
+			.type-specimen {
+				border: 1px solid #e0e0e0;
+				padding: 2rem;
+				background: white;
+				margin-bottom: 1rem;
+			}
+
+			/* Grid Examples */
+			.grid-example {
+				display: grid;
+				gap: 1rem;
+				margin-bottom: 2rem;
+			}
+
+			.grid-asymmetric {
+				grid-template-columns: 2fr 3fr;
+			}
+
+			.grid-magazine {
+				grid-template-columns: repeat(3, 1fr);
+			}
+
+			/* Design Elements */
+			.bold-contrast-box {
+				border: 4px solid black;
+				padding: 2rem;
+				border-radius: 2rem;
+			}
+
+			.vertical-text {
+				writing-mode: vertical-rl;
+				text-orientation: mixed;
+			}
+
+			/* Organic Shapes - Based on Portfolio Design */
+			.organic-round {
+				border-radius: 3rem;
+			}
+
+			.organic-blob {
+				border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+			}
+
+			.organic-blob-alt {
+				border-radius: 40% 60% 60% 40% / 50% 50% 50% 50%;
+			}
+
+			.organic-soft {
+				border-radius: 2rem;
+			}
+
+			.organic-wave {
+				border-radius: 50% 20% / 30% 60%;
+			}
+
+			/* Animation - Morphing Effect */
+			@keyframes morphing {
+				0%,
+				100% {
+					border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+				}
+				25% {
+					border-radius: 40% 60% 60% 40% / 50% 50% 50% 50%;
+				}
+				50% {
+					border-radius: 30% 70% 70% 30% / 40% 60% 40% 60%;
+				}
+				75% {
+					border-radius: 50% 50% 20% 80% / 50% 70% 30% 50%;
+				}
+			}
+
+			.morphing-animation {
+				animation: morphing 8s ease-in-out infinite;
+			}
+
+			/* Interactive States */
+			.hover-burgundy:hover {
+				background-color: #800020;
+				color: white;
+				transform: scale(1.05);
+			}
+
+			.skill-tag {
+				background-color: #000;
+				color: #fff;
+				padding: 0.75rem 1.5rem;
+				font-weight: 700;
+				font-size: 0.9rem;
+				text-transform: uppercase;
+				letter-spacing: 1px;
+				border: 2px solid #000;
+				transition: all 0.3s ease;
+				display: inline-block;
+			}
+
+			.skill-tag:hover {
+				background-color: #fff;
+				color: #000;
+				transform: scale(1.1);
+			}
+		</style>
+	</head>
+	<body class="p-8">
+		<div class="max-w-7xl mx-auto">
+			<!-- Header -->
+			<header class="mb-12 border-b-4 border-black pb-6">
+				<h1 class="font-serif-display text-6xl font-bold mb-2">STYLE GUIDE</h1>
+				<p class="text-xl text-gray-600">
+					Visual Identity & Design System — Nadia ten Hove
+				</p>
+			</header>
+
+			<!-- Color Palette Section -->
+			<section class="mb-16">
+				<h2 class="font-grotesk text-4xl font-bold mb-6 uppercase">
+					01. Color Palette
+				</h2>
+				<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+					<div>
+						<div
+							class="color-bordeaux h-32 border-2 border-black organic-blob"
+						></div>
+						<p class="font-bold mt-2">Bordeaux</p>
+						<p class="text-sm text-gray-600">#800020</p>
+					</div>
+					<div>
+						<div
+							class="color-silver h-32 border-2 border-black organic-round"
+						></div>
+						<p class="font-bold mt-2">Silver</p>
+						<p class="text-sm text-gray-600">#C0C0C0</p>
+					</div>
+					<div>
+						<div
+							class="color-black h-32 border-2 border-black organic-soft"
+						></div>
+						<p class="font-bold mt-2">Black</p>
+						<p class="text-sm text-gray-600">#000000</p>
+					</div>
+					<div>
+						<div
+							class="color-white h-32 border-2 border-black organic-wave"
+						></div>
+						<p class="font-bold mt-2">White</p>
+						<p class="text-sm text-gray-600">#FFFFFF</p>
+					</div>
+					<div>
+						<div
+							class="color-cream h-32 border-2 border-black organic-blob"
+							style="border-radius: 40% 60% 60% 40% / 50% 50% 50% 50%"
+						></div>
+						<p class="font-bold mt-2">Cream</p>
+						<p class="text-sm text-gray-600">#F5F0E8</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- Typography Section -->
+			<section class="mb-16">
+				<h2 class="font-grotesk text-4xl font-bold mb-6 uppercase">
+					02. Typography
+				</h2>
+
+				<!-- Playfair Display -->
+				<div class="type-specimen mb-6">
+					<h3
+						class="font-bold text-sm text-gray-500 mb-4 uppercase tracking-wide"
+					>
+						Playfair Display — Display & Headers
+					</h3>
+					<p class="font-serif-display text-5xl font-bold mb-2">
+						BOLD STATEMENT
+					</p>
+					<p class="font-serif-display text-4xl font-light italic mb-2">
+						Elegant Italic
+					</p>
+					<p class="font-serif-display text-2xl">Regular Text</p>
+				</div>
+
+				<!-- Space Grotesk -->
+				<div class="type-specimen mb-6">
+					<h3
+						class="font-bold text-sm text-gray-500 mb-4 uppercase tracking-wide"
+					>
+						Space Grotesk — Modern & Technical
+					</h3>
+					<p class="font-grotesk text-4xl font-bold mb-2 uppercase">
+						GEOMETRIC BOLD
+					</p>
+					<p class="font-grotesk text-2xl font-medium">Medium Weight</p>
+					<p class="font-grotesk text-xl font-light">Light Weight</p>
+				</div>
+
+				<!-- Inter -->
+				<div class="type-specimen">
+					<h3
+						class="font-bold text-sm text-gray-500 mb-4 uppercase tracking-wide"
+					>
+						Inter — Body & UI Text
+					</h3>
+					<p class="text-lg mb-2">
+						Inter is used for readable body copy, UI elements, and smaller text.
+						It provides excellent legibility at all sizes.
+					</p>
+					<p class="text-sm text-gray-600">
+						Available in multiple weights from thin to black.
+					</p>
+				</div>
+			</section>
+
+			<!-- Layout Principles -->
+			<section class="mb-16">
+				<h2 class="font-grotesk text-4xl font-bold mb-6 uppercase">
+					03. Layout Principles
+				</h2>
+
+				<!-- Asymmetric Grid -->
+				<div class="mb-8">
+					<h3 class="font-bold text-xl mb-4">Asymmetric Grid (2:3)</h3>
+					<div class="grid-example grid-asymmetric">
+						<div
+							style="background-color: #800020"
+							class="text-white p-8 flex items-center justify-center organic-soft"
+						>
+							<span class="font-grotesk text-2xl font-bold">2 UNITS</span>
+						</div>
+						<div
+							class="border-2 border-black p-8 flex items-center justify-center organic-soft"
+						>
+							<span class="font-grotesk text-2xl font-bold">3 UNITS</span>
+						</div>
+					</div>
+				</div>
+
+				<!-- Magazine Grid -->
+				<div class="mb-8">
+					<h3 class="font-bold text-xl mb-4">Magazine Grid (3 Columns)</h3>
+					<div class="grid-example grid-magazine">
+						<div
+							style="background-color: #800020"
+							class="text-white p-8 aspect-square flex items-center justify-center organic-blob"
+						>
+							<span class="font-bold">COL 1</span>
+						</div>
+						<div
+							style="background-color: #c0c0c0"
+							class="text-black p-8 aspect-square flex items-center justify-center organic-round"
+						>
+							<span class="font-bold">COL 2</span>
+						</div>
+						<div
+							style="background-color: #f5f0e8"
+							class="text-black p-8 aspect-square flex items-center justify-center organic-soft"
+						>
+							<span class="font-bold">COL 3</span>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Design Elements -->
+			<section class="mb-16">
+				<h2 class="font-grotesk text-4xl font-bold mb-6 uppercase">
+					04. Design Elements
+				</h2>
+
+				<div class="grid md:grid-cols-2 gap-6">
+					<!-- Bold Borders -->
+					<div>
+						<h3 class="font-bold text-xl mb-4">Bold Borders & Frames</h3>
+						<div class="bold-contrast-box bg-white">
+							<p class="font-grotesk text-2xl font-bold">HIGH CONTRAST</p>
+							<p class="mt-2">4px black borders for impact</p>
+						</div>
+					</div>
+
+					<!-- Color Blocks -->
+					<div>
+						<h3 class="font-bold text-xl mb-4">Color Blocking</h3>
+						<div class="grid grid-cols-2 gap-4">
+							<div
+								style="background-color: #800020"
+								class="text-white p-6 organic-blob border-2 border-black"
+							>
+								<p class="font-bold">BORDEAUX</p>
+							</div>
+							<div
+								style="background-color: #c0c0c0"
+								class="text-black p-6 organic-round border-2 border-black"
+							>
+								<p class="font-bold">SILVER</p>
+							</div>
+							<div
+								style="background-color: #f5f0e8"
+								class="text-black p-6 organic-soft border-2 border-black"
+							>
+								<p class="font-bold">CREAM</p>
+							</div>
+							<div class="bg-white border-2 border-black p-6 organic-wave">
+								<p class="font-bold">WHITE</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- Vertical Text -->
+					<div>
+						<h3 class="font-bold text-xl mb-4">Vertical Typography</h3>
+						<div class="bg-cream p-8 flex justify-center border-2 border-black">
+							<p
+								class="vertical-text font-grotesk text-2xl font-bold tracking-wider"
+							>
+								EDITORIAL DESIGN
+							</p>
+						</div>
+					</div>
+
+					<!-- Image Frames -->
+					<div>
+						<h3 class="font-bold text-xl mb-4">Image Frames</h3>
+						<div class="flex justify-center items-center h-64">
+							<div
+								class="bg-gray-200 h-48 w-48 flex items-center justify-center border-2 border-black organic-blob"
+							>
+								<p class="text-gray-500 font-bold">IMAGE</p>
+							</div>
+						</div>
+						<p class="text-sm mt-2 text-gray-600">
+							Images with organic shapes matching design system
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- Bento Grid System -->
+			<section class="mb-16">
+				<h2 class="font-grotesk text-4xl font-bold mb-6 uppercase">
+					05. Bento Grid System
+				</h2>
+				<p class="text-lg mb-6 text-gray-700">
+					The portfolio uses a 6-column bento-style grid with organic shapes and
+					asymmetric sizing.
+				</p>
+
+				<div class="grid grid-cols-6 gap-4 mb-8">
+					<div
+						class="col-span-2 bg-white border-2 border-black p-6 organic-blob"
+						style="background-color: #800020; color: white"
+					>
+						<p class="font-grotesk font-bold text-sm">2 COLS</p>
+						<p class="text-xs mt-2">Header Section</p>
+					</div>
+					<div
+						class="col-span-4 bg-white border-2 border-black p-6 organic-soft"
+					>
+						<p class="font-grotesk font-bold text-sm">4 COLS</p>
+						<p class="text-xs mt-2">Content Section</p>
+					</div>
+					<div
+						class="col-span-3 bg-white border-2 border-black p-6 organic-wave"
+						style="background-color: #c0c0c0"
+					>
+						<p class="font-grotesk font-bold text-sm">3 COLS</p>
+						<p class="text-xs mt-2">Education</p>
+					</div>
+					<div
+						class="col-span-3 bg-white border-2 border-black p-6 organic-blob-alt"
+						style="background-color: #f5f0e8"
+					>
+						<p class="font-grotesk font-bold text-sm">3 COLS</p>
+						<p class="text-xs mt-2">Tools & Languages</p>
+					</div>
+					<div class="col-span-6 bg-white border-2 border-black p-6">
+						<p class="font-grotesk font-bold text-sm">6 COLS (FULL WIDTH)</p>
+						<p class="text-xs mt-2">Experience Section</p>
+					</div>
+				</div>
+
+				<div class="bg-gray-50 p-6 border-2 border-gray-300">
+					<h3 class="font-bold mb-3">Grid Rules:</h3>
+					<ul class="text-sm space-y-2 list-disc pl-5">
+						<li>Base grid: 6 columns with 2rem gap</li>
+						<li>Each section uses organic border-radius variations</li>
+						<li>Hover effects: translateY(-5px) + shadow</li>
+						<li>Mobile: collapses to single column at 1200px</li>
+					</ul>
+				</div>
+			</section>
+
+			<!-- Interactive Elements -->
+			<section class="mb-16">
+				<h2 class="font-grotesk text-4xl font-bold mb-6 uppercase">
+					06. Interactive Elements
+				</h2>
+
+				<div class="mb-8">
+					<h3 class="font-bold text-xl mb-4">Skill Tags</h3>
+					<div class="flex flex-wrap gap-3">
+						<span class="skill-tag">Concept</span>
+						<span class="skill-tag">Art Direction</span>
+						<span class="skill-tag">Styling</span>
+						<span class="skill-tag">Visual Storytelling</span>
+						<span class="skill-tag">Branding</span>
+					</div>
+					<p class="text-sm text-gray-600 mt-3">
+						Hover to see white background with black text transition
+					</p>
+				</div>
+
+				<div class="mb-8">
+					<h3 class="font-bold text-xl mb-4">Contact Buttons</h3>
+					<div class="flex flex-wrap gap-3">
+						<a
+							href="#"
+							class="bg-black text-white px-6 py-3 text-sm font-semibold hover-burgundy transition-all"
+						>
+							Email
+						</a>
+						<a
+							href="#"
+							class="bg-black text-white px-6 py-3 text-sm font-semibold hover-burgundy transition-all"
+						>
+							Phone
+						</a>
+						<a
+							href="#"
+							class="bg-black text-white px-6 py-3 text-sm font-semibold hover-burgundy transition-all"
+						>
+							Instagram
+						</a>
+					</div>
+					<p class="text-sm text-gray-600 mt-3">
+						Hover: burgundy background + scale(1.05)
+					</p>
+				</div>
+
+				<div>
+					<h3 class="font-bold text-xl mb-4">Experience Cards</h3>
+					<div class="grid md:grid-cols-3 gap-4">
+						<div
+							class="bg-white border-3 border-black p-6 transition-all hover:bg-[#800020] hover:text-white hover:border-[#800020] organic-blob"
+							style="border-width: 3px; border-color: #800020"
+						>
+							<p class="text-xs font-bold mb-2" style="color: #800020">
+								2025 – PRESENT
+							</p>
+							<h4 class="font-serif-display text-lg font-bold mb-1">
+								Sales & Brand Assistant
+							</h4>
+							<p class="text-xs italic opacity-70">XBank, Amsterdam</p>
+						</div>
+						<div
+							class="bg-white border-2 border-black p-6 transition-all hover:bg-[#800020] hover:text-white hover:border-[#800020] organic-blob-alt"
+						>
+							<p class="text-xs font-bold mb-2" style="color: #800020">
+								2023 – 2024
+							</p>
+							<h4 class="font-serif-display text-lg font-bold mb-1">
+								Creative & PR Assistant
+							</h4>
+							<p class="text-xs italic opacity-70">Numéro Magazine</p>
+						</div>
+						<div
+							class="bg-white border-2 border-black p-6 transition-all hover:bg-[#800020] hover:text-white hover:border-[#800020] organic-wave"
+						>
+							<p class="text-xs font-bold mb-2" style="color: #800020">
+								2021 – 2023
+							</p>
+							<h4 class="font-serif-display text-lg font-bold mb-1">
+								Freelance Projects
+							</h4>
+							<p class="text-xs italic opacity-70">
+								Amsterdam / Berlin / Paris
+							</p>
+						</div>
+					</div>
+					<p class="text-sm text-gray-600 mt-3">
+						Hover: burgundy background, white text, year color changes
+					</p>
+				</div>
+			</section>
+
+			<!-- Design Principles -->
+			<section class="mb-16">
+				<h2 class="font-grotesk text-4xl font-bold mb-6 uppercase">
+					07. Design Principles
+				</h2>
+				<div class="grid md:grid-cols-3 gap-6">
+					<div class="bg-white border-2 border-black p-6">
+						<h3 class="font-serif-display text-2xl font-bold mb-3">
+							Bold Contrast
+						</h3>
+						<p class="text-sm">
+							Use strong color contrasts and heavy borders to create visual
+							impact
+						</p>
+					</div>
+					<div class="bg-white border-2 border-black p-6">
+						<h3 class="font-serif-display text-2xl font-bold mb-3">
+							Organic Shapes
+						</h3>
+						<p class="text-sm">
+							Embrace fluid, organic border-radius values with morphing
+							animations
+						</p>
+					</div>
+					<div class="bg-white border-2 border-black p-6">
+						<h3 class="font-serif-display text-2xl font-bold mb-3">
+							Interactive UX
+						</h3>
+						<p class="text-sm">
+							Smooth transitions, hover effects, and accessible keyboard
+							navigation
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- Example Compositions -->
+			<section class="mb-16">
+				<h2 class="font-grotesk text-4xl font-bold mb-6 uppercase">
+					08. Example Compositions
+				</h2>
+
+				<!-- Poster Style Example -->
+				<div class="mb-8">
+					<h3 class="font-bold text-xl mb-4">Poster Style</h3>
+					<div
+						style="background-color: #800020"
+						class="text-white border-4 border-black p-12 relative overflow-hidden"
+					>
+						<div
+							class="absolute top-4 right-4 vertical-text font-grotesk text-sm font-bold tracking-widest"
+						>
+							AMSTERDAM 2025
+						</div>
+						<h4 class="font-serif-display text-6xl font-bold leading-none mb-4">
+							CREATIVE<br />CONCEPT<br />DEVELOPER
+						</h4>
+						<div class="w-24 h-1 bg-white mb-4"></div>
+						<p class="font-grotesk text-lg">
+							Visual identity & art direction for fashion and lifestyle brands
+						</p>
+					</div>
+				</div>
+
+				<!-- Magazine Layout Example -->
+				<div class="mb-8">
+					<h3 class="font-bold text-xl mb-4">Magazine Layout</h3>
+					<div class="grid grid-cols-3 gap-0 border-4 border-black">
+						<div class="col-span-2 p-8 bg-cream">
+							<h4 class="font-serif-display text-4xl font-bold mb-3">
+								Editorial Design
+							</h4>
+							<p class="text-sm leading-relaxed mb-4">
+								Creating compelling visual narratives through thoughtful
+								composition, typography, and color. Each project is an
+								opportunity to tell a unique story.
+							</p>
+							<div
+								class="inline-block text-white px-4 py-2 font-bold text-sm"
+								style="background-color: #800020"
+							>
+								VIEW PORTFOLIO
+							</div>
+						</div>
+						<div
+							style="background-color: #c0c0c0"
+							class="p-8 flex items-center justify-center"
+						>
+							<div class="text-black text-center">
+								<p class="vertical-text font-grotesk text-3xl font-bold">
+									DESIGN
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Accessibility & Responsive -->
+			<section class="mb-16">
+				<h2 class="font-grotesk text-4xl font-bold mb-6 uppercase">
+					09. Accessibility & Responsive Design
+				</h2>
+
+				<div class="grid md:grid-cols-2 gap-6 mb-6">
+					<div class="bg-white border-2 border-black p-6">
+						<h3 class="font-bold text-lg mb-3">Keyboard Navigation</h3>
+						<ul class="text-sm space-y-2 list-disc pl-5">
+							<li>All interactive elements are keyboard accessible</li>
+							<li>Focus visible: 3px burgundy outline with 2px offset</li>
+							<li>Skip to main content link (hidden until focused)</li>
+							<li>Logical tab order throughout</li>
+						</ul>
+					</div>
+
+					<div class="bg-white border-2 border-black p-6">
+						<h3 class="font-bold text-lg mb-3">Motion Preferences</h3>
+						<ul class="text-sm space-y-2 list-disc pl-5">
+							<li>Respects <code>prefers-reduced-motion</code></li>
+							<li>Animations disabled for motion-sensitive users</li>
+							<li>Transitions reduced to 0.01ms when requested</li>
+							<li>Profile morphing animation paused</li>
+						</ul>
+					</div>
+
+					<div class="bg-white border-2 border-black p-6">
+						<h3 class="font-bold text-lg mb-3">Semantic HTML</h3>
+						<ul class="text-sm space-y-2 list-disc pl-5">
+							<li><code>&lt;address&gt;</code> for contact information</li>
+							<li>
+								<code>&lt;article&gt;</code> and <code>&lt;time&gt;</code> for
+								experience
+							</li>
+							<li>
+								<code>&lt;ul&gt;</code> with <code>role="list"</code> for skills
+							</li>
+							<li>Proper heading hierarchy (h1, h2, h3)</li>
+						</ul>
+					</div>
+
+					<div class="bg-white border-2 border-black p-6">
+						<h3 class="font-bold text-lg mb-3">ARIA Labels</h3>
+						<ul class="text-sm space-y-2 list-disc pl-5">
+							<li>Contact links include descriptive labels</li>
+							<li>External links marked appropriately</li>
+							<li>Screen reader friendly navigation</li>
+							<li>Location marked with proper context</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="bg-gray-50 p-6 border-2 border-gray-300">
+					<h3 class="font-bold mb-3">Responsive Breakpoints:</h3>
+					<div class="grid md:grid-cols-4 gap-4 text-sm">
+						<div>
+							<p class="font-bold">Desktop</p>
+							<p class="text-gray-600">> 1200px</p>
+							<p class="text-xs mt-1">Full 6-column grid</p>
+						</div>
+						<div>
+							<p class="font-bold">Tablet</p>
+							<p class="text-gray-600">768px - 1200px</p>
+							<p class="text-xs mt-1">Single column, adjusted spacing</p>
+						</div>
+						<div>
+							<p class="font-bold">Mobile</p>
+							<p class="text-gray-600">480px - 768px</p>
+							<p class="text-xs mt-1">Reduced padding, smaller fonts</p>
+						</div>
+						<div>
+							<p class="font-bold">Small Mobile</p>
+							<p class="text-gray-600">< 480px</p>
+							<p class="text-xs mt-1">Minimal padding, optimized sizes</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Touch Devices -->
+			<section class="mb-16">
+				<h2 class="font-grotesk text-4xl font-bold mb-6 uppercase">
+					10. Touch Device Optimization
+				</h2>
+				<div class="bg-white border-2 border-black p-6">
+					<h3 class="font-bold text-lg mb-3">
+						Media Query: <code>@media (hover: none) and (pointer: coarse)</code>
+					</h3>
+					<p class="text-sm mb-4">
+						On touch devices, transform effects are disabled to prevent awkward
+						interactions:
+					</p>
+					<ul class="text-sm space-y-2 list-disc pl-5">
+						<li>Contact buttons: No scale transform on hover</li>
+						<li>Skill bubbles: No scale transform on hover</li>
+						<li>Bento items: No translateY on hover</li>
+						<li>Experience cards: No transform effects</li>
+					</ul>
+					<p class="text-sm mt-4 text-gray-600">
+						This ensures a smooth, native-feeling experience on mobile devices
+						while maintaining visual feedback through color changes.
+					</p>
+				</div>
+			</section>
+
+			<!-- Footer -->
+			<footer class="border-t-4 border-black pt-8 mt-16">
+				<div class="mb-4">
+					<h3 class="font-bold text-lg mb-2">Quick Reference</h3>
+					<div class="grid md:grid-cols-3 gap-4 text-sm">
+						<div>
+							<p class="font-semibold">Primary Color</p>
+							<p class="text-gray-600">Bordeaux #800020</p>
+						</div>
+						<div>
+							<p class="font-semibold">Grid System</p>
+							<p class="text-gray-600">6 columns, 2rem gap</p>
+						</div>
+						<div>
+							<p class="font-semibold">Fonts</p>
+							<p class="text-gray-600">
+								Playfair Display, Space Grotesk, Inter
+							</p>
+						</div>
+					</div>
+				</div>
+				<p class="text-sm text-gray-600 border-t pt-4 mt-4">
+					Style Guide v2.0 — Updated 2025 — Nadia ten Hove Creative Concept
+					Development
+				</p>
+			</footer>
+		</div>
+	</body>
+</html>
