@@ -203,6 +203,22 @@ a {
     background-color: #f5f0e8;
 }
 
+/* Local Video Styling */
+.local-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    background-color: #000000;
+}
+
+.video-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000;
+}
+
 /* Caption Styling */
 .post-caption {
     font-family: "Inter", sans-serif;
