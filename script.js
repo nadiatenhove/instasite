@@ -31,6 +31,17 @@ document.addEventListener('DOMContentLoaded', function () {
                 group.style.display = 'none';
             }
         });
+
+        // Trigger Instagram embed refresh after filter change
+        if (window.instgrm) {
+            setTimeout(() => {
+                try {
+                    window.instgrm.Embeds.process();
+                } catch (e) {
+                    console.log('Instagram embed processing skipped');
+                }
+            }, 100);
+        }
     }
 
     // Event Listeners voor navigatieknoppen
@@ -49,4 +60,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Initial load: Toon alleen 'Creatief Werk'
     filterPortfolio('all');
+
+    // Instagram embed error handling
+    window.addEventListener('error', function(e) {
+        // Suppress Instagram embed errors
+        if (e.message && e.message.includes('Invariant')) {
+            e.preventDefault();
+            return false;
+        }
+    }, true);
 });
